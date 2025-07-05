@@ -6,6 +6,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const commander_1 = require("commander");
 const chalk_1 = __importDefault(require("chalk"));
+const init_1 = require("./commands/init");
 const program = new commander_1.Command();
 program
     .name("validstart")
@@ -16,5 +17,11 @@ program
     .description("Test command")
     .action(() => {
     console.log(chalk_1.default.green("✅ Hello from validstart!"));
+});
+program
+    .command("init")
+    .description("Start an interactive project scaffolding process")
+    .action(() => {
+    (0, init_1.runInitCommand)();
 });
 program.parse(process.argv);
