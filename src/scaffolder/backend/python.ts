@@ -22,7 +22,10 @@ export async function scaffoldBackendPython(options: Options): Promise<void> {
   const entryFile = framework === "django" ? "" : "main.py";
   if (entryFile) await fs.writeFile(path.join(projectPath, entryFile), appFile);
 
-  await fs.writeFile(path.join(projectPath, "requirements.txt"), getPythonRequirements(framework, selectedTools).join("\n"));
+  await fs.writeFile(
+    path.join(projectPath, "requirements.txt"),
+    getPythonRequirements(framework, selectedTools).join("\n"),
+  );
 
   console.log(chalk.gray("🐚 Creating virtual environment..."));
   await execa("python3", ["-m", "venv", ".venv"], { cwd: projectPath });
