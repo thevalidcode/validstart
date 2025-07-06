@@ -2,7 +2,7 @@
   "name": "validstart",
   "version": "1.0.1",
   "description": "ValidStart is a powerful and intuitive command-line interface (CLI) tool meticulously crafted to streamline the project setup process.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "bin": {
     "validstart": "dist/index.js"
   },
@@ -28,13 +28,5 @@
     "@types/node": "^24.0.10",
     "standard-version": "^9.5.0",
     "ts-node": "^10.9.2"
-  },
-  "pkg": {
-    "scripts": "dist/**/*",
-    "targets": [
-      "node18-linux-x64",
-      "node18-macos-x64",
-      "node18-win-x64"
-    ]
   }
 }

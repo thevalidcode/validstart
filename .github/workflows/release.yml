@@ -12,10 +12,6 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-        target:
-          - node22-linux-x64
-          - node22-macos-x64
-          - node22-win-x64
 
     steps:
       - name: Checkout code
@@ -29,21 +25,17 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Install pkg
-        run: npm install -g pkg
+      - name: Install nexe
+        run: npm install -g nexe
 
       - name: Build binary
         run: |
-          pkg . --target ${{ matrix.target }} --output validstart
-
-      - name: Rename binary for OS
-        run: |
           if [[ "${{ matrix.os }}" == "ubuntu-latest" ]]; then
-            mv validstart validstart-linux
+            nexe ./index.js -t linux-x64-22.0.0 -o validstart-linux
           elif [[ "${{ matrix.os }}" == "macos-latest" ]]; then
-            mv validstart validstart-macos
+            nexe ./index.js -t macos-x64-22.0.0 -o validstart-macos
           elif [[ "${{ matrix.os }}" == "windows-latest" ]]; then
-            mv validstart.exe validstart-win.exe
+            nexe ./index.js -t windows-x64-22.0.0 -o validstart-win.exe
           fi
 
       - name: Upload release asset
