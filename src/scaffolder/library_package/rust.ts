@@ -1,5 +1,5 @@
-const execa = require("execa");
-const chalk = require("chalk");
+import { execa } from "execa";;
+import chalk from "chalk";;
 
 
 export async function scaffoldLibRust({ projectName }: any): Promise<void> {

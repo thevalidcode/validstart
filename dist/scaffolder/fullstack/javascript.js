@@ -6,12 +6,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.scaffoldFullstackJS = scaffoldFullstackJS;
 const fs_extra_1 = __importDefault(require("fs-extra"));
 const path_1 = __importDefault(require("path"));
-const chalk = require("chalk");
+const chalk_1 = __importDefault(require("chalk"));
+;
 const execa_1 = require("execa");
+;
 async function scaffoldFullstackJS(options) {
     const { projectName, framework } = options;
     const projectPath = path_1.default.resolve(process.cwd(), projectName);
-    console.log(chalk.cyan(`\n🌐 Creating JavaScript fullstack project with ${chalk.bold(framework)}`));
+    console.log(chalk_1.default.cyan(`\n🌐 Creating JavaScript fullstack project with ${chalk_1.default.bold(framework)}`));
     await fs_extra_1.default.mkdirp(projectPath);
     switch (framework.toLowerCase()) {
         case "next.js":
@@ -28,5 +30,5 @@ async function scaffoldFullstackJS(options) {
             return; // Meteor sets its own folder
     }
     await (0, execa_1.execa)("git", ["init"], { cwd: projectPath });
-    console.log(chalk.green(`\n✅ JavaScript fullstack project '${projectName}' created at ${projectPath}\n`));
+    console.log(chalk_1.default.green(`\n✅ JavaScript fullstack project '${projectName}' created at ${projectPath}\n`));
 }

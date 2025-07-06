@@ -1,5 +1,5 @@
 import inquirer from "inquirer";
-const chalk = require("chalk");
+import chalk from "chalk";;
 import path from "path";
 import { languageMap, frameworks, toolsAndLibs } from "../data/projectData";
 import { scaffoldProject } from "../scaffolder/index";

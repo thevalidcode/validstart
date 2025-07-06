@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { Command } from "commander";
-const chalk = require("chalk");
+import chalk from "chalk";;
 import { runInitCommand } from "./commands/init";
 
 const program = new Command();

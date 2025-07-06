@@ -1,6 +1,6 @@
 import fs from "fs-extra";
 import path from "path";
-const chalk = require("chalk");
+import chalk from "chalk";;
 
 
 interface Options {

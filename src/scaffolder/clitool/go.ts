@@ -1,8 +1,8 @@
 import fs from "fs-extra";
 import path from "path";
-const chalk = require("chalk");
+import chalk from "chalk";;
 
-const execa = require("execa");
+import { execa } from "execa";;
 
 export async function scaffoldCLIToolGo({ projectName }: any): Promise<void> {
   const projectPath = path.resolve(process.cwd(), projectName);

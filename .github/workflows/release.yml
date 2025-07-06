@@ -9,42 +9,18 @@ permissions:
   contents: write
 
 jobs:
-  build-and-release:
-    name: Build ValidStart CLI
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+  release:
+    name: Release ValidStart
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Install pkg
-        run: npm install -g pkg
-
-      - name: Build binaries
-        run: |
-          pkg dist/index.js --targets node18-linux-x64 --output validstart-linux
-          pkg dist/index.js --targets node18-macos-x64 --output validstart-macos
-          pkg dist/index.js --targets node18-win-x64 --output validstart-win.exe
-
-      - name: Create GitHub release and upload binaries
+      - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ github.ref_name }}
           name: Release ${{ github.ref_name }}
-          files: |
-            validstart-*
-          draft: false
-          prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

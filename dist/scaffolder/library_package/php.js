@@ -6,7 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.scaffoldLibPHP = scaffoldLibPHP;
 const fs_extra_1 = __importDefault(require("fs-extra"));
 const path_1 = __importDefault(require("path"));
-const chalk = require("chalk");
+const chalk_1 = __importDefault(require("chalk"));
+;
 async function scaffoldLibPHP({ projectName }) {
     const base = path_1.default.resolve(process.cwd(), projectName);
     const srcPath = path_1.default.join(base, "src");
@@ -37,5 +38,5 @@ class ${className} {
         require: {},
     };
     await fs_extra_1.default.writeFile(path_1.default.join(base, "composer.json"), JSON.stringify(composerJson, null, 2));
-    console.log(chalk.green(`✅ PHP library '${projectName}' created with Composer.`));
+    console.log(chalk_1.default.green(`✅ PHP library '${projectName}' created with Composer.`));
 }

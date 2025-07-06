@@ -1,8 +1,8 @@
 import fs from "fs-extra";
 import path from "path";
-const chalk = require("chalk");
+import chalk from "chalk";;
 
-const execa = require("execa");
+import { execa } from "execa";;
 
 interface Options {
   projectName: string;

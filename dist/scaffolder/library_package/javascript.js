@@ -6,7 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.scaffoldLibJS = scaffoldLibJS;
 const fs_extra_1 = __importDefault(require("fs-extra"));
 const path_1 = __importDefault(require("path"));
-const chalk = require("chalk");
+const chalk_1 = __importDefault(require("chalk"));
+;
 async function scaffoldLibJS({ projectName }) {
     const projectPath = path_1.default.resolve(process.cwd(), projectName);
     await fs_extra_1.default.mkdirp(projectPath);
@@ -26,5 +27,5 @@ async function scaffoldLibJS({ projectName }) {
     await fs_extra_1.default.writeJson(path_1.default.join(projectPath, "package.json"), pkg, { spaces: 2 });
     await fs_extra_1.default.outputFile(path_1.default.join(projectPath, "src/index.js"), `export function hello() {\n  return "Hello from JS library";\n}`);
     await fs_extra_1.default.outputFile(path_1.default.join(projectPath, "rollup.config.js"), `export default {\n  input: "src/index.js",\n  output: {\n    file: "dist/index.js",\n    format: "cjs"\n  }\n};`);
-    console.log(chalk.green(`✅ JavaScript library '${projectName}' created.`));
+    console.log(chalk_1.default.green(`✅ JavaScript library '${projectName}' created.`));
 }

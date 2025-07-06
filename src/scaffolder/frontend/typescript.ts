@@ -1,6 +1,6 @@
-const execa = require("execa");
+import { execa } from "execa";;
 import path from "path";
-const chalk = require("chalk");
+import chalk from "chalk";;
 
 import fs from "fs-extra";
 
