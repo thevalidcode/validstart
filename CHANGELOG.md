@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.6](https://github.com/thevalidcode/validstart/compare/v1.0.5...v1.0.6) (2025-07-06)
+
+
+### Bug Fixes
+
+* Downgraded to node 18 for nexe. ([7e12b9d](https://github.com/thevalidcode/validstart/commit/7e12b9d1080935ee7366927b80a14dae2d931273))
+
 ### [1.0.5](https://github.com/thevalidcode/validstart/compare/v1.0.4...v1.0.5) (2025-07-06)
 
 
