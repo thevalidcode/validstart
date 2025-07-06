@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.11](https://github.com/thevalidcode/validstart/compare/v1.0.10...v1.0.11) (2025-07-06)
+
+
+### Bug Fixes
+
+* Downgraded chalk to chalk@4 to work well with pkg ([1de66b4](https://github.com/thevalidcode/validstart/commit/1de66b4ed39e7d3d55d95f3e5d0559ae7daa56a3))
+
 ### [1.0.10](https://github.com/thevalidcode/validstart/compare/v1.0.9...v1.0.10) (2025-07-06)
 
 
