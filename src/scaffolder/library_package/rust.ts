@@ -1,5 +1,6 @@
 import { execa } from "execa";
-import chalk from "chalk";
+const chalk = require("chalk");
+
 
 export async function scaffoldLibRust({ projectName }: any): Promise<void> {
   await execa("cargo", ["new", "--lib", projectName], { stdio: "inherit" });

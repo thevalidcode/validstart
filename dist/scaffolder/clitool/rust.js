@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.scaffoldCLIToolRust = scaffoldCLIToolRust;
 const execa_1 = require("execa");
 const path_1 = __importDefault(require("path"));
-const chalk_1 = __importDefault(require("chalk"));
+const chalk = require("chalk");
 const fs_extra_1 = __importDefault(require("fs-extra"));
 async function scaffoldCLIToolRust({ projectName }) {
     const projectPath = path_1.default.resolve(process.cwd(), projectName);
@@ -14,5 +14,5 @@ async function scaffoldCLIToolRust({ projectName }) {
     const mainPath = path_1.default.join(projectPath, "src", "main.rs");
     const code = `use clap::Parser;\n\n#[derive(Parser)]\n#[command(name = "${projectName}")]\nstruct Cli {}\n\nfn main() {\n    println!("Hello from Rust CLI!");\n}`;
     await fs_extra_1.default.writeFile(mainPath, code);
-    console.log(chalk_1.default.green(`✅ Rust CLI tool '${projectName}' scaffolded.`));
+    console.log(chalk.green(`✅ Rust CLI tool '${projectName}' scaffolded.`));
 }

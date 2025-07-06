@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.scaffoldCLIToolTS = scaffoldCLIToolTS;
 const fs_extra_1 = __importDefault(require("fs-extra"));
 const path_1 = __importDefault(require("path"));
-const chalk_1 = __importDefault(require("chalk"));
+const chalk = require("chalk");
 const execa_1 = require("execa");
 async function scaffoldCLIToolTS({ projectName }) {
     const projectPath = path_1.default.resolve(process.cwd(), projectName);
@@ -19,5 +19,5 @@ async function scaffoldCLIToolTS({ projectName }) {
     const srcDir = path_1.default.join(projectPath, "src");
     await fs_extra_1.default.mkdirp(srcDir);
     await fs_extra_1.default.writeFile(path_1.default.join(srcDir, "index.ts"), `import { Command, Flags } from '@oclif/core';\n\nclass Hello extends Command {\n  async run() {\n    this.log("Hello CLI in TS!");\n  }\n}\n\nexport = Hello;`);
-    console.log(chalk_1.default.green(`✅ TypeScript CLI project '${projectName}' scaffolded.`));
+    console.log(chalk.green(`✅ TypeScript CLI project '${projectName}' scaffolded.`));
 }

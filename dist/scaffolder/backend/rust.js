@@ -6,20 +6,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.scaffoldBackendRust = scaffoldBackendRust;
 const fs_extra_1 = __importDefault(require("fs-extra"));
 const path_1 = __importDefault(require("path"));
-const chalk_1 = __importDefault(require("chalk"));
+const chalk = require("chalk");
 const execa_1 = require("execa");
 async function scaffoldBackendRust(options) {
     const { projectName, framework } = options;
     const projectPath = path_1.default.resolve(process.cwd(), projectName);
-    console.log(chalk_1.default.cyan(`\n🦀 Creating Rust backend project with ${chalk_1.default.bold(framework)}`));
+    console.log(chalk.cyan(`\n🦀 Creating Rust backend project with ${chalk.bold(framework)}`));
     await (0, execa_1.execa)("cargo", ["new", projectName, "--bin"]);
     const mainPath = path_1.default.join(projectPath, "src", "main.rs");
     await fs_extra_1.default.writeFile(mainPath, getRustTemplate(framework));
     const cargoToml = path_1.default.join(projectPath, "Cargo.toml");
     await fs_extra_1.default.appendFile(cargoToml, getRustDependencies(framework));
-    console.log(chalk_1.default.gray("🔧 Initializing git..."));
+    console.log(chalk.gray("🔧 Initializing git..."));
     await (0, execa_1.execa)("git", ["init"], { cwd: projectPath });
-    console.log(chalk_1.default.green(`\n✅ Rust project '${projectName}' created at ${projectPath}\n`));
+    console.log(chalk.green(`\n✅ Rust project '${projectName}' created at ${projectPath}\n`));
 }
 function getRustTemplate(framework) {
     switch (framework.toLowerCase()) {

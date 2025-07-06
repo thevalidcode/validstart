@@ -6,12 +6,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.scaffoldBackendTS = scaffoldBackendTS;
 const fs_extra_1 = __importDefault(require("fs-extra"));
 const path_1 = __importDefault(require("path"));
-const chalk_1 = __importDefault(require("chalk"));
+const chalk = require("chalk");
 const execa_1 = require("execa");
 async function scaffoldBackendTS(options) {
     const { projectName, framework, selectedTools } = options;
     const projectPath = path_1.default.resolve(process.cwd(), projectName);
-    console.log(chalk_1.default.cyan(`\n🚀 Creating backend project with ${chalk_1.default.bold(framework)} in TypeScript`));
+    console.log(chalk.cyan(`\n🚀 Creating backend project with ${chalk.bold(framework)} in TypeScript`));
     await fs_extra_1.default.mkdirp(projectPath);
     await (0, execa_1.execa)("npm", ["init", "-y"], { cwd: projectPath });
     await (0, execa_1.execa)("npm", ["install", "--save-dev", "typescript", "ts-node", "@types/node"], {
@@ -32,12 +32,12 @@ async function scaffoldBackendTS(options) {
     }, { spaces: 2 });
     const dependencies = getDependencies(framework, selectedTools);
     if (dependencies.length) {
-        console.log(chalk_1.default.blue(`📦 Installing dependencies: ${dependencies.join(", ")}`));
+        console.log(chalk.blue(`📦 Installing dependencies: ${dependencies.join(", ")}`));
         await (0, execa_1.execa)("npm", ["install", ...dependencies], { cwd: projectPath, stdio: "inherit" });
     }
-    console.log(chalk_1.default.gray("🔧 Initializing git..."));
+    console.log(chalk.gray("🔧 Initializing git..."));
     await (0, execa_1.execa)("git", ["init"], { cwd: projectPath });
-    console.log(chalk_1.default.green(`\n✅ TypeScript backend project '${projectName}' created with ${framework} at ${projectPath}\n`));
+    console.log(chalk.green(`\n✅ TypeScript backend project '${projectName}' created with ${framework} at ${projectPath}\n`));
 }
 function getBaseTemplate(framework) {
     switch (framework.toLowerCase()) {

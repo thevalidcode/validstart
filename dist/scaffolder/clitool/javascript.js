@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.scaffoldCLIToolJS = scaffoldCLIToolJS;
 const fs_extra_1 = __importDefault(require("fs-extra"));
 const path_1 = __importDefault(require("path"));
-const chalk_1 = __importDefault(require("chalk"));
+const chalk = require("chalk");
 async function scaffoldCLIToolJS({ projectName }) {
     const projectPath = path_1.default.resolve(process.cwd(), projectName);
     await fs_extra_1.default.mkdirp(projectPath);
@@ -23,5 +23,5 @@ async function scaffoldCLIToolJS({ projectName }) {
     await fs_extra_1.default.writeJson(path_1.default.join(projectPath, "package.json"), pkg, { spaces: 2 });
     await fs_extra_1.default.writeFile(path_1.default.join(projectPath, "index.js"), `#!/usr/bin/env node\nconst { program } = require("commander");\n\nprogram.version("1.0.0");\nprogram.command("hello").action(() => console.log("Hello CLI"));\n\nprogram.parse();\n`);
     await fs_extra_1.default.chmod(path_1.default.join(projectPath, "index.js"), 0o755);
-    console.log(chalk_1.default.green(`✅ JavaScript CLI project '${projectName}' scaffolded.`));
+    console.log(chalk.green(`✅ JavaScript CLI project '${projectName}' scaffolded.`));
 }

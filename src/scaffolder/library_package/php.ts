@@ -1,6 +1,7 @@
 import fs from "fs-extra";
 import path from "path";
-import chalk from "chalk";
+const chalk = require("chalk");
+
 
 export async function scaffoldLibPHP({ projectName }: any): Promise<void> {
   const base = path.resolve(process.cwd(), projectName);

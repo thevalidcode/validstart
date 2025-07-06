@@ -6,12 +6,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.scaffoldFullstackGo = scaffoldFullstackGo;
 const fs_extra_1 = __importDefault(require("fs-extra"));
 const path_1 = __importDefault(require("path"));
-const chalk_1 = __importDefault(require("chalk"));
+const chalk = require("chalk");
 const execa_1 = require("execa");
 async function scaffoldFullstackGo(options) {
     const { projectName, framework } = options;
     const projectPath = path_1.default.resolve(process.cwd(), projectName);
-    console.log(chalk_1.default.cyan(`\n🐹 Creating Go fullstack project with ${chalk_1.default.bold(framework)}`));
+    console.log(chalk.cyan(`\n🐹 Creating Go fullstack project with ${chalk.bold(framework)}`));
     if (framework === "Buffalo") {
         await (0, execa_1.execa)("buffalo", ["new", projectName], { stdio: "inherit" });
         return;
@@ -26,5 +26,5 @@ async function scaffoldFullstackGo(options) {
         stdio: "inherit",
     });
     await (0, execa_1.execa)("git", ["init"], { cwd: projectPath });
-    console.log(chalk_1.default.green(`\n✅ Go fullstack project '${projectName}' scaffolded\n`));
+    console.log(chalk.green(`\n✅ Go fullstack project '${projectName}' scaffolded\n`));
 }

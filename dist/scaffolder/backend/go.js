@@ -6,22 +6,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.scaffoldBackendGo = scaffoldBackendGo;
 const fs_extra_1 = __importDefault(require("fs-extra"));
 const path_1 = __importDefault(require("path"));
-const chalk_1 = __importDefault(require("chalk"));
+const chalk = require("chalk");
 const execa_1 = require("execa");
 async function scaffoldBackendGo(options) {
     const { projectName, framework, selectedTools } = options;
     const projectPath = path_1.default.resolve(process.cwd(), projectName);
     await fs_extra_1.default.mkdirp(projectPath);
-    console.log(chalk_1.default.cyan(`\n🐹 Creating Go backend project with ${chalk_1.default.bold(framework)}`));
+    console.log(chalk.cyan(`\n🐹 Creating Go backend project with ${chalk.bold(framework)}`));
     await fs_extra_1.default.writeFile(path_1.default.join(projectPath, "main.go"), getGoTemplate(framework));
     await (0, execa_1.execa)("go", ["mod", "init", projectName], { cwd: projectPath });
     const deps = getGoDependencies(framework, selectedTools);
     for (const dep of deps) {
         await (0, execa_1.execa)("go", ["get", dep], { cwd: projectPath });
     }
-    console.log(chalk_1.default.gray("🔧 Initializing git..."));
+    console.log(chalk.gray("🔧 Initializing git..."));
     await (0, execa_1.execa)("git", ["init"], { cwd: projectPath });
-    console.log(chalk_1.default.green(`\n✅ Go project '${projectName}' created at ${projectPath}\n`));
+    console.log(chalk.green(`\n✅ Go project '${projectName}' created at ${projectPath}\n`));
 }
 function getGoTemplate(framework) {
     switch (framework.toLowerCase()) {

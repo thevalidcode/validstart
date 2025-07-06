@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.runInitCommand = runInitCommand;
 const inquirer_1 = __importDefault(require("inquirer"));
-const chalk_1 = __importDefault(require("chalk"));
+const chalk = require("chalk");
 const path_1 = __importDefault(require("path"));
 const projectData_1 = require("../data/projectData");
 const index_1 = require("../scaffolder/index");
@@ -15,7 +15,7 @@ const license_1 = require("../utils/generators/license");
 const env_1 = require("../utils/generators/env");
 const installScript_1 = require("../utils/generators/installScript");
 async function runInitCommand() {
-    console.log(chalk_1.default.cyan("\n🚀 Welcome to ValidStart Setup!\n"));
+    console.log(chalk.cyan("\n🚀 Welcome to ValidStart Setup!\n"));
     // Ask for project name
     const { projectName } = await inquirer_1.default.prompt([
         {
@@ -74,12 +74,12 @@ async function runInitCommand() {
         },
     ]);
     // Show summary
-    console.log(chalk_1.default.green("\n✅ Setup Summary:"));
-    console.log(`📦 Project Name: ${chalk_1.default.bold(projectName)}`);
-    console.log(`📂 Project Type: ${chalk_1.default.bold(projectType)}`);
-    console.log(`💻 Language: ${chalk_1.default.bold(language)}`);
-    console.log(`🧱 Framework: ${chalk_1.default.bold(framework)}`);
-    console.log(`🧰 Tools/Libraries: ${chalk_1.default.bold(selectedTools.join(", ") || "None")}\n`);
+    console.log(chalk.green("\n✅ Setup Summary:"));
+    console.log(`📦 Project Name: ${chalk.bold(projectName)}`);
+    console.log(`📂 Project Type: ${chalk.bold(projectType)}`);
+    console.log(`💻 Language: ${chalk.bold(language)}`);
+    console.log(`🧱 Framework: ${chalk.bold(framework)}`);
+    console.log(`🧰 Tools/Libraries: ${chalk.bold(selectedTools.join(", ") || "None")}\n`);
     // Scaffold the main project files
     await (0, index_1.scaffoldProject)({
         projectName,
@@ -108,5 +108,5 @@ async function runInitCommand() {
                             : "npm install";
         await (0, installScript_1.generateInstallScript)(projectPath, [installCommand]);
     }
-    console.log(chalk_1.default.cyan(`\n🎉 ${chalk_1.default.bold("ValidStart")} setup complete!`));
+    console.log(chalk.cyan(`\n🎉 ${chalk.bold("ValidStart")} setup complete!`));
 }

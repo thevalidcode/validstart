@@ -1,6 +1,7 @@
 import fs from "fs-extra";
 import path from "path";
-import chalk from "chalk";
+const chalk = require("chalk");
+
 
 export async function scaffoldCLIToolPython({ projectName }: any): Promise<void> {
   const projectPath = path.resolve(process.cwd(), projectName);

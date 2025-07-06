@@ -6,11 +6,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.scaffoldBackendJava = scaffoldBackendJava;
 const fs_extra_1 = __importDefault(require("fs-extra"));
 const path_1 = __importDefault(require("path"));
-const chalk_1 = __importDefault(require("chalk"));
+const chalk = require("chalk");
 async function scaffoldBackendJava(options) {
     const { projectName } = options;
     const projectPath = path_1.default.resolve(process.cwd(), projectName);
-    console.log(chalk_1.default.cyan(`\n☕ Creating Spring Boot project scaffold for '${projectName}'`));
+    console.log(chalk.cyan(`\n☕ Creating Spring Boot project scaffold for '${projectName}'`));
     await fs_extra_1.default.mkdirp(path_1.default.join(projectPath, "src", "main", "java", "com", "example", "demo"));
     await fs_extra_1.default.mkdirp(path_1.default.join(projectPath, "src", "main", "resources"));
     const mainJava = `package com.example.demo;
@@ -68,5 +68,5 @@ public class DemoApplication {
 `;
     await fs_extra_1.default.writeFile(path_1.default.join(projectPath, "src", "main", "java", "com", "example", "demo", "DemoApplication.java"), mainJava);
     await fs_extra_1.default.writeFile(path_1.default.join(projectPath, "pom.xml"), pomXml);
-    console.log(chalk_1.default.green(`\n✅ Java Spring Boot scaffold created at ${projectPath}\n`));
+    console.log(chalk.green(`\n✅ Java Spring Boot scaffold created at ${projectPath}\n`));
 }
