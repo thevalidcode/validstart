@@ -25,23 +25,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Install nexe
-        run: npm install -g nexe
+      - name: Install pkg
+        run: npm install -g pkg
 
-      - name: Build binary
-        shell: bash
+      - name: Build binaries
         run: |
-          echo "🔧 Building for: $RUNNER_OS"
-          if [[ "$RUNNER_OS" == "Linux" ]]; then
-            nexe ./index.js -t linux-x64-18.18.0 -o validstart-linux
-          elif [[ "$RUNNER_OS" == "macOS" ]]; then
-            nexe ./index.js -t macos-x64-18.18.0 -o validstart-macos
-          elif [[ "$RUNNER_OS" == "Windows" ]]; then
-            nexe ./index.js -t windows-x64-18.18.0 -o validstart-win.exe
-          else
-            echo "❌ Unsupported OS: $RUNNER_OS"
-            exit 1
-          fi
+          pkg dist/index.js --targets node18-linux-x64 --output validstart-linux
+          pkg dist/index.js --targets node18-macos-x64 --output validstart-macos
+          pkg dist/index.js --targets node18-win-x64 --output validstart-win.exe
 
       - name: Upload release asset
         uses: softprops/action-gh-release@v1
