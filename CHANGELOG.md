@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.12](https://github.com/thevalidcode/validstart/compare/v1.0.11...v1.0.12) (2025-07-06)
+
+
+### Bug Fixes
+
+* Downgraded to execa@6 ([16480e8](https://github.com/thevalidcode/validstart/commit/16480e8d738d368bc7ed5a761036cc869f0eb0ee))
+
 ### [1.0.11](https://github.com/thevalidcode/validstart/compare/v1.0.10...v1.0.11) (2025-07-06)
 
 
