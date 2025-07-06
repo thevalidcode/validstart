@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.8](https://github.com/thevalidcode/validstart/compare/v1.0.7...v1.0.8) (2025-07-06)
+
+
+### Bug Fixes
+
+* replaced nexe to pkg ([7c0d892](https://github.com/thevalidcode/validstart/commit/7c0d8924a633a576b24b734e05a33d1d782ce1d4))
+
 ### [1.0.7](https://github.com/thevalidcode/validstart/compare/v1.0.6...v1.0.7) (2025-07-06)
 
 ### [1.0.6](https://github.com/thevalidcode/validstart/compare/v1.0.5...v1.0.6) (2025-07-06)
