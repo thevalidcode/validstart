@@ -71,6 +71,10 @@ You should see:
 ✅ Hello from ValidStart!
 ```
 
+## 🎥 CLI Demo
+
+![ValidStart CLI Demo](./public/assets/validstart-demo.gif)
+
 ---
 
 ## 📁 Create a New Project
