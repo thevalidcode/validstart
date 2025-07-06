@@ -1,0 +1,55 @@
+name: Build & Release ValidStart
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  build-and-release:
+    name: Build ValidStart CLI
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        target:
+          - node22-linux-x64
+          - node22-macos-x64
+          - node22-win-x64
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install pkg
+        run: npm install -g pkg
+
+      - name: Build binary
+        run: |
+          pkg . --target ${{ matrix.target }} --output validstart
+
+      - name: Rename binary for OS
+        run: |
+          if [[ "${{ matrix.os }}" == "ubuntu-latest" ]]; then
+            mv validstart validstart-linux
+          elif [[ "${{ matrix.os }}" == "macos-latest" ]]; then
+            mv validstart validstart-macos
+          elif [[ "${{ matrix.os }}" == "windows-latest" ]]; then
+            mv validstart.exe validstart-win.exe
+          fi
+
+      - name: Upload release asset
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            validstart-*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

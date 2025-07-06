@@ -7,6 +7,6 @@ exports.generateReadme = generateReadme;
 const fs_extra_1 = __importDefault(require("fs-extra"));
 const path_1 = __importDefault(require("path"));
 async function generateReadme(projectPath, projectName, description = "") {
-    const content = `# ${projectName}\n\n${description || "A new project scaffolded with Validstart."}\n`;
+    const content = `# ${projectName}\n\n${description || "A new project scaffolded with ValidStart."}\n`;
     await fs_extra_1.default.writeFile(path_1.default.join(projectPath, "README.md"), content);
 }

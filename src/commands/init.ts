@@ -11,7 +11,7 @@ import { generateEnv } from "../utils/generators/env";
 import { generateInstallScript } from "../utils/generators/installScript";
 
 export async function runInitCommand(): Promise<void> {
-  console.log(chalk.cyan("\n🚀 Welcome to Validstart Setup!\n"));
+  console.log(chalk.cyan("\n🚀 Welcome to ValidStart Setup!\n"));
 
   // Ask for project name
   const { projectName } = await inquirer.prompt([
@@ -118,5 +118,5 @@ export async function runInitCommand(): Promise<void> {
     await generateInstallScript(projectPath, [installCommand]);
   }
 
-  console.log(chalk.cyan(`\n🎉 ${chalk.bold("Validstart")} setup complete!`));
+  console.log(chalk.cyan(`\n🎉 ${chalk.bold("ValidStart")} setup complete!`));
 }

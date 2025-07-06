@@ -15,7 +15,7 @@ const license_1 = require("../utils/generators/license");
 const env_1 = require("../utils/generators/env");
 const installScript_1 = require("../utils/generators/installScript");
 async function runInitCommand() {
-    console.log(chalk_1.default.cyan("\n🚀 Welcome to Validstart Setup!\n"));
+    console.log(chalk_1.default.cyan("\n🚀 Welcome to ValidStart Setup!\n"));
     // Ask for project name
     const { projectName } = await inquirer_1.default.prompt([
         {
@@ -108,5 +108,5 @@ async function runInitCommand() {
                             : "npm install";
         await (0, installScript_1.generateInstallScript)(projectPath, [installCommand]);
     }
-    console.log(chalk_1.default.cyan(`\n🎉 ${chalk_1.default.bold("Validstart")} setup complete!`));
+    console.log(chalk_1.default.cyan(`\n🎉 ${chalk_1.default.bold("ValidStart")} setup complete!`));
 }

@@ -1,22 +1,20 @@
-# Validstart: Universal Project Scaffolder 🚀
+# ValidStart: Universal Project Scaffolder 🚀
 
-Validstart is a powerful and intuitive command-line interface (CLI) tool meticulously crafted to streamline the project setup process. It aims to eliminate repetitive boilerplate and accelerate your development workflow by providing a consistent way to scaffold projects across various languages and frameworks. Whether you're embarking on a new backend service, a sleek frontend application, a robust full-stack solution, a handy CLI utility, or a reusable library, Validstart is designed to get you started quickly and efficiently with your preferred technology stack.
+ValidStart is a powerful and intuitive command-line interface (CLI) tool meticulously crafted to streamline the project setup process. It aims to eliminate repetitive boilerplate and accelerate your development workflow by providing a consistent way to scaffold projects across various languages and frameworks. Whether you're embarking on a new backend service, a sleek frontend application, a robust full-stack solution, a handy CLI utility, or a reusable library, ValidStart is designed to get you started quickly and efficiently with your preferred technology stack.
 
 ## Installation
 
-To get Validstart up and running on your machine, follow these simple steps:
+To get ValidStart up and running on your machine, follow these simple steps:
 
-### Global Installation (Recommended)
+## 🛠️ Quick Install (No Software Needed)
 
-To use Validstart as a global command-line tool, install it via npm:
-
-```bash
-npm install -g validstart
+````bash
+curl -fsSL https://raw.githubusercontent.com/thevalidcode/validstart/main/install.sh | bash
 ```
 
 ### Local Development Setup
 
-If you wish to contribute to Validstart or run it directly from its source code:
+If you wish to contribute to ValidStart or run it directly from its source code:
 
 1.  **Clone the Repository**:
 
@@ -45,7 +43,7 @@ If you wish to contribute to Validstart or run it directly from its source code:
 
 ## Usage
 
-Validstart provides an interactive experience to guide you through project creation.
+ValidStart provides an interactive experience to guide you through project creation.
 
 ### Starting a New Project
 
@@ -53,7 +51,7 @@ To begin scaffolding a new project, simply run the `init` command:
 
 ```bash
 validstart init
-```
+````
 
 This will launch a series of interactive prompts where you can define your project's characteristics:
 
@@ -63,11 +61,11 @@ This will launch a series of interactive prompts where you can define your proje
 - **Framework**: Pick a specific framework or library relevant to your chosen language and project type (e.g., React, Express, Django, Spring Boot, Next.js).
 - **Additional Tools/Libraries**: Opt for extra utilities to be included in your setup (e.g., TailwindCSS, React Router, Dotenv).
 
-Validstart will then set up the necessary directory structure, boilerplate code, and install initial dependencies automatically.
+ValidStart will then set up the necessary directory structure, boilerplate code, and install initial dependencies automatically.
 
 ### Test Command
 
-You can quickly check if Validstart is working correctly by running the `hello` command:
+You can quickly check if ValidStart is working correctly by running the `hello` command:
 
 ```bash
 validstart hello
@@ -77,7 +75,7 @@ You should see a cheerful confirmation message in your terminal.
 
 ## Features
 
-Validstart offers a comprehensive set of features to accelerate your development workflow:
+ValidStart offers a comprehensive set of features to accelerate your development workflow:
 
 - **Multi-Language Support**: Seamlessly scaffold projects in JavaScript, TypeScript, Python, Go, Rust, Java, PHP, and even basic HTML/CSS.
 - **Diverse Project Archetypes**: Specialized scaffolding logic for various project types including web Frontend, robust Backend APIs, integrated Fullstack applications, handy CLI Tools, and reusable Libraries/Packages.
@@ -89,7 +87,7 @@ Validstart offers a comprehensive set of features to accelerate your development
 
 ## Technologies Used
 
-Validstart itself is built on a solid foundation of modern JavaScript technologies:
+ValidStart itself is built on a solid foundation of modern JavaScript technologies:
 
 | Category          | Technology   | Description                                          | Link                                                                                                               |
 | :---------------- | :----------- | :--------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------- |
@@ -109,7 +107,7 @@ This project is licensed under the ISC License.
 
 ## Author Info
 
-Connect with the creator of Validstart:
+Connect with the creator of ValidStart:
 
 **Ibe Precious**
 

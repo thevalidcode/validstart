@@ -1,7 +1,7 @@
 {
   "name": "validstart",
   "version": "1.0.0",
-  "description": "Validstart is a powerful and intuitive command-line interface (CLI) tool meticulously crafted to streamline the project setup process.",
+  "description": "ValidStart is a powerful and intuitive command-line interface (CLI) tool meticulously crafted to streamline the project setup process.",
   "main": "index.js",
   "bin": {
     "validstart": "dist/index.js"
@@ -9,7 +9,8 @@
   "scripts": {
     "dev": "ts-node src/index.ts",
     "build": "tsc",
-    "lint": "eslint src --fix"
+    "lint": "eslint src --fix",
+    "release": "standard-version && git push --follow-tags"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +26,15 @@
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^24.0.10",
+    "standard-version": "^9.5.0",
     "ts-node": "^10.9.2"
+  },
+  "pkg": {
+    "scripts": "dist/**/*",
+    "targets": [
+      "node18-linux-x64",
+      "node18-macos-x64",
+      "node18-win-x64"
+    ]
   }
 }
