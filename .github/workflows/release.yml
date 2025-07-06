@@ -31,11 +31,11 @@ jobs:
       - name: Build binary
         run: |
           if [[ "${{ matrix.os }}" == "ubuntu-latest" ]]; then
-            nexe ./index.js -t linux-x64-22.0.0 -o validstart-linux
+            nexe ./index.js -t linux-x64-22.0.0 --build -o validstart-linux
           elif [[ "${{ matrix.os }}" == "macos-latest" ]]; then
-            nexe ./index.js -t macos-x64-22.0.0 -o validstart-macos
+            nexe ./index.js -t macos-x64-22.0.0 --build -o validstart-macos
           elif [[ "${{ matrix.os }}" == "windows-latest" ]]; then
-            nexe ./index.js -t windows-x64-22.0.0 -o validstart-win.exe
+            nexe ./index.js -t windows-x64-22.0.0 --build -o validstart-win.exe
           fi
 
       - name: Upload release asset
