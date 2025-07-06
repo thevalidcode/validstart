@@ -10,7 +10,7 @@
     "dev": "ts-node src/index.ts",
     "build": "tsc",
     "lint": "eslint src --fix",
-    "release": "standard-version && git push --follow-tags"
+    "release": "standard-version && git push --follow-tags && npm publish"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +19,7 @@
   "dependencies": {
     "chalk": "^4.1.2",
     "commander": "^14.0.0",
-    "execa": "^9.6.0",
+    "execa": "^6.1.0",
     "fs-extra": "^11.3.0",
     "inquirer": "^12.7.0"
   },

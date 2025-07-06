@@ -2,7 +2,7 @@ import fs from "fs-extra";
 import path from "path";
 const chalk = require("chalk");
 
-import { execa } from "execa";
+const execa = require("execa");
 
 interface Options {
   projectName: string;

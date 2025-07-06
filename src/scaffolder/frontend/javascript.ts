@@ -1,4 +1,4 @@
-import { execa } from "execa";
+const execa = require("execa");
 import path from "path";
 const chalk = require("chalk");
 
