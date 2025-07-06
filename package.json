@@ -1,6 +1,6 @@
 {
   "name": "validstart",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ValidStart is a powerful and intuitive command-line interface (CLI) tool meticulously crafted to streamline the project setup process.",
   "main": "index.js",
   "bin": {
