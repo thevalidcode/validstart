@@ -34,10 +34,14 @@ jobs:
           pkg dist/index.js --targets node18-macos-x64 --output validstart-macos
           pkg dist/index.js --targets node18-win-x64 --output validstart-win.exe
 
-      - name: Upload release asset
+      - name: Create GitHub release and upload binaries
         uses: softprops/action-gh-release@v1
         with:
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
           files: |
             validstart-*
+          draft: false
+          prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
