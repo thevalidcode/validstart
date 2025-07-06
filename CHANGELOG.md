@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.10](https://github.com/thevalidcode/validstart/compare/v1.0.9...v1.0.10) (2025-07-06)
+
+
+### Bug Fixes
+
+* added permisions block to workflow ([50018ff](https://github.com/thevalidcode/validstart/commit/50018ff524efa7993a5be5b50342fa22833fbf12))
+
 ### [1.0.9](https://github.com/thevalidcode/validstart/compare/v1.0.8...v1.0.9) (2025-07-06)
 
 
