@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/thevalidcode/validstart/compare/v1.0.12...v1.1.0) (2025-07-06)
+
+
+### Features
+
+* Removed all binary-related code project will now be available to install via npm ([95e3bc6](https://github.com/thevalidcode/validstart/commit/95e3bc66f7d338088f900c04f5d5f842eda158e0))
+
 ### [1.0.12](https://github.com/thevalidcode/validstart/compare/v1.0.11...v1.0.12) (2025-07-06)
 
 
