@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.5](https://github.com/thevalidcode/validstart/compare/v1.0.4...v1.0.5) (2025-07-06)
+
+
+### Bug Fixes
+
+* Fixed deploying of release. ([9b1fde5](https://github.com/thevalidcode/validstart/commit/9b1fde5bd85c07acaf48a3c4553146f2adcd2a22))
+
 ### [1.0.4](https://github.com/thevalidcode/validstart/compare/v1.0.3...v1.0.4) (2025-07-06)
 
 
