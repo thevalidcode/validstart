@@ -20,7 +20,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 22
+          node-version: 18
 
       - name: Install dependencies
         run: npm install
@@ -33,11 +33,11 @@ jobs:
         run: |
           echo "🔧 Building for: $RUNNER_OS"
           if [[ "$RUNNER_OS" == "Linux" ]]; then
-            nexe ./index.js -t linux-x64-22.0.0 --build -o validstart-linux
+            nexe ./index.js -t linux-x64-18.18.0 -o validstart-linux
           elif [[ "$RUNNER_OS" == "macOS" ]]; then
-            nexe ./index.js -t macos-x64-22.0.0 --build -o validstart-macos
+            nexe ./index.js -t macos-x64-18.18.0 -o validstart-macos
           elif [[ "$RUNNER_OS" == "Windows" ]]; then
-            nexe ./index.js -t windows-x64-22.0.0 --build -o validstart-win.exe
+            nexe ./index.js -t windows-x64-18.18.0 -o validstart-win.exe
           else
             echo "❌ Unsupported OS: $RUNNER_OS"
             exit 1
